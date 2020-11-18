@@ -1,22 +1,35 @@
 package exercise8;
 
 public class Point {
-    // Define attributes
-
+    public double x ;
+    public double y ;
+    
     public Point() {
-        // Initialize attributes to 0
+        this.x = 0;
+        this.y = 0;
+         
     }
 
     public Point(double x, double y) {
-        // Initialize attributes by coping x and y parameters
+        this.x = x;
+        this.y = y;
+
     }
 
     public Point(Point otherPoint) {
-        // Initialize attributes by coping attributes of otherPoint
+        this.x = otherPoint.x;
     }
 
     public void initialize() {
-        // Change attributes through console
+      Scanner scanner = Utils.scanner;
+      System.out.println("Enter coordinates for point:");
+      System.out.println("x:");
+      double x = Utils.scanner.nextDouble;
+      System.out.println("y:");
+      double y = Utils.scanner.nextDouble;
+        this.x=x;
+        this.y=y;
+
     }
 
     public void translate(double xDelta, double yDelta) {
