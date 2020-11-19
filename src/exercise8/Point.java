@@ -21,33 +21,32 @@ public class Point {
     }
 
     public void initialize() {
-      Scanner scanner = Utils.scanner;
       System.out.println("Enter coordinates for point:");
       System.out.println("x:");
-      double x = Utils.scanner.nextDouble;
+      double x = Utils.INPUT.nextDouble();
       System.out.println("y:");
-      double y = Utils.scanner.nextDouble;
+      double y = Utils.INPUT.nextDouble();
         this.x=x;
         this.y=y;
 
     }
 
     public void translate(double xDelta, double yDelta) {
-        // Change attributes by adding xDelta and yDelta
+        this.x=this.x+xDelta;
+        this.y=this.y+yDelta;
     }
 
     public Point createNewTranslatedPoint(double xDelta, double yDelta) {
-        // Create new point which is translated relative to this point
-        return null;
+        return new Point(this.x+xDelta,this.y+yDelta);
+        
     }
 
     public boolean equals(Point otherPoint) {
-        // Compare attributes of this point to attributes of otherPoint for equality
+      if(Utils.equals(this.x,otherPoint.x)&&Utils.equals(this.y, otherPoint.y)) return true;
         return false;
     }
 
     public String toString() {
-        // Represent attributes as string
-        return null;
+        return String.format("(%.1f, %.1f)", this.x,this.y);
     }
 }
